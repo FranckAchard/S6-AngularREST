@@ -1,4 +1,4 @@
-import { Bookmark } from './core/bookmark';
+import { Tag } from './core/tag';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BookmarkService {
+export class TagService {
 
   constructor(private  httpClient:  HttpClient) { }
 
-  public getAll(): Observable<Array<Bookmark>> {
-    return this.httpClient.get<Array<Bookmark>>('https://bnppf1-bookmarks.herokuapp.com/bookmark');
+  public getById(id: string): Observable<Tag> {
+    return this.httpClient.get<Tag>('https://bnppf1-bookmarks.herokuapp.com/tag/' + id);
   }
 }

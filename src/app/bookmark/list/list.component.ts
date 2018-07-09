@@ -1,3 +1,4 @@
+import { Bookmark } from './../../core/bookmark';
 import { BookmarkService } from './../../bookmark.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  bookmarks = [];
+  bookmarks: Bookmark[] = [];
 
   constructor(private bookmarkService: BookmarkService) { }
 
@@ -18,5 +19,4 @@ export class ListComponent implements OnInit {
       this.bookmarks = list;
     });
   }
-
 }

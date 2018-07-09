@@ -1,8 +1,13 @@
-<p>
-  list works!
-</p>
 <mat-list>
   <mat-list-item *ngFor="let bookmark of bookmarks">
-    <h3 matLine>{{bookmark.title}}</h3>
+    <div matLine>{{bookmark.title}}</div>
+    <mat-chip-list matLine>
+      <mat-chip 
+        *ngFor="let tag of bookmark.tags" 
+        selected color="primary"
+        routerLink="/tag/{{tag.id}}">
+        {{tag.label}}
+      </mat-chip>
+    </mat-chip-list>
   </mat-list-item>
 </mat-list>
