@@ -7,11 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { ProfileComponent } from './profile/profile.component';
+import { BookmarkComponent } from './bookmark/bookmark.component';
+import { TagComponent } from './tag/tag.component';
+import { ListComponent } from './bookmark/list/list.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavComponent
+    MyNavComponent,
+    ProfileComponent,
+    BookmarkComponent,
+    TagComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +32,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
