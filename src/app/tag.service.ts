@@ -8,17 +8,19 @@ import { Injectable } from '@angular/core';
 })
 export class TagService {
 
+  TAG_URL = 'https://bnppf1-bookmarks.herokuapp.com/tag/';
+
   constructor(private  httpClient:  HttpClient) { }
 
   public getById(id: string): Observable<Tag> {
-    return this.httpClient.get<Tag>('https://bnppf1-bookmarks.herokuapp.com/tag/' + id);
+    return this.httpClient.get<Tag>(this.TAG_URL + id);
   }
 
   public getAll(): Observable<Array<Tag>> {
-    return this.httpClient.get<Array<Tag>>('https://bnppf1-bookmarks.herokuapp.com/tag');
+    return this.httpClient.get<Array<Tag>>(this.TAG_URL);
   }
 
   public update(tag: Tag): Observable<Tag> {
-    return this.httpClient.put<Tag>('https://bnppf1-bookmarks.herokuapp.com/tag', tag);
+    return this.httpClient.put<Tag>(this.TAG_URL + tag.id, tag);
   }
 }
