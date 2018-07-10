@@ -1,6 +1,6 @@
 <mat-list>
   <mat-list-item *ngFor="let bookmark of bookmarks">
-    <div matLine>{{bookmark.title}}</div>
+    <div matLine>{{bookmark.title}} ; {{bookmark.id}}</div>
     <mat-chip-list matLine>
       <mat-chip 
         *ngFor="let tag of bookmark.tags" 

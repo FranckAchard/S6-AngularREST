@@ -1,3 +1,5 @@
+import { Author } from './../core/author';
+import { ProfileService } from './../profile.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  author: Author;
+
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
+  }
+
+  public create() {
+    this.profileService.create(this.author).subscribe( (author) => {
+      this.author = author;
+      console.log('créé !');
+    }, (err) => {
+      console.log('erreur !', err);
+    }
+    );
   }
 
 }
