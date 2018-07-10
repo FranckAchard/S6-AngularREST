@@ -1,5 +1,5 @@
-import { Tag } from './../../core/tag';
-import { TagService } from './../../tag.service';
+import { Tag } from '../../core/tag';
+import { TagService } from '../../tag.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,9 @@ export class DetailsComponent implements OnInit {
     // const id2 = this.route.snapshot.params.id;
     // console.log('id : ', id);
     // console.log('id2 : ', id2);
-    this.tagService.getById(id).subscribe((tag: Tag) => {
+    this.tagService
+      .getById(id)
+      .subscribe((tag: Tag) => {
       console.log('tag : ', tag);
       this.tag = tag;
     });

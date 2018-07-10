@@ -10,10 +10,12 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { ProfileComponent } from './profile/profile.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { TagComponent } from './tag/tag.component';
-import { ListComponent } from './bookmark/list/list.component';
+import { BookmarklistComponent } from './bookmark/bookmarklist/bookmarklist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './tag/details/details.component';
-
+import { TaglistComponent } from './tag/taglist/taglist.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { TagformComponent } from './tag/tagform/tagform.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { DetailsComponent } from './tag/details/details.component';
     ProfileComponent,
     BookmarkComponent,
     TagComponent,
-    ListComponent,
-    DetailsComponent
+    BookmarklistComponent,
+    DetailsComponent,
+    TaglistComponent,
+    TagformComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import { DetailsComponent } from './tag/details/details.component';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    MatChipsModule
+    MatChipsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
-import { Bookmark } from './../../core/bookmark';
-import { BookmarkService } from './../../bookmark.service';
+import { Bookmark } from '../../core/bookmark';
+import { BookmarkService } from '../../bookmark.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  templateUrl: './bookmarklist.component.html',
+  styleUrls: ['./bookmarklist.component.css']
 })
-export class ListComponent implements OnInit {
+export class BookmarklistComponent implements OnInit {
 
   bookmarks: Bookmark[] = [];
 

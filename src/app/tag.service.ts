@@ -13,4 +13,12 @@ export class TagService {
   public getById(id: string): Observable<Tag> {
     return this.httpClient.get<Tag>('https://bnppf1-bookmarks.herokuapp.com/tag/' + id);
   }
+
+  public getAll(): Observable<Array<Tag>> {
+    return this.httpClient.get<Array<Tag>>('https://bnppf1-bookmarks.herokuapp.com/tag');
+  }
+
+  public update(tag: Tag): Observable<Tag> {
+    return this.httpClient.put<Tag>('https://bnppf1-bookmarks.herokuapp.com/tag', tag);
+  }
 }
