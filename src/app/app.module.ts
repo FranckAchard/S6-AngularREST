@@ -23,6 +23,9 @@ import { DetailsComponent } from './tag/details/details.component';
 import { TaglistComponent } from './tag/taglist/taglist.component';
 import { TagformComponent } from './tag/tagform/tagform.component';
 import { FormsModule } from '@angular/forms';
+import { TagdeleteComponent } from './tag/tagdelete/tagdelete.component';
+import { BookmarkdeleteComponent } from './bookmark/bookmarkdelete/bookmarkdelete.component';
+import { TagcreateComponent } from './tag/tagcreate/tagcreate.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { FormsModule } from '@angular/forms';
     BookmarklistComponent,
     DetailsComponent,
     TaglistComponent,
-    TagformComponent
+    TagformComponent,
+    TagdeleteComponent,
+    BookmarkdeleteComponent,
+    TagcreateComponent
   ],
   imports: [
     BrowserModule,

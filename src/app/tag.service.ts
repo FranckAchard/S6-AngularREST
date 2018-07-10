@@ -23,4 +23,12 @@ export class TagService {
   public update(tag: Tag): Observable<Tag> {
     return this.httpClient.put<Tag>(this.TAG_URL + tag.id, tag);
   }
+
+  public create(tag: Tag): Observable<Tag> {
+    return this.httpClient.post<Tag>(this.TAG_URL, tag);
+  }
+
+  public delete(id: string): Observable<Tag> {
+    return this.httpClient.delete<Tag>(this.TAG_URL + id);
+  }
 }

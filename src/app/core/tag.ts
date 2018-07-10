@@ -5,5 +5,5 @@ export interface Tag {
     id?: string;
     label: string;
     bookmarks: Bookmark[];
-    author: Author;
+    author: Author | string;
 }

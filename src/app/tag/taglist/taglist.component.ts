@@ -20,4 +20,10 @@ export class TaglistComponent implements OnInit {
     });
   }
 
+  delete(id: string) {
+    this.tagService.delete(id).subscribe( (list) => {
+      console.log('Tag id: ', id, ' supprimé!');
+    });
+  }
+
 }

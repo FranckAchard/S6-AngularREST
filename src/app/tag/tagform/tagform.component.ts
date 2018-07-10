@@ -1,3 +1,4 @@
+import { Author } from './../../core/author';
 import { Tag } from './../../core/tag';
 import { TagService } from './../../tag.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,15 +17,28 @@ export class TagformComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.tagService.getById(id).subscribe( (tag: Tag) => {
-      this.tag = tag;
-    });
+    if (id) {
+      this.tagService.getById(id).subscribe( (tag: Tag) => {
+        this.tag = tag;
+      });
+    } else {
+      this.tag = {
+        label: '',
+        author: '5b431a15e523050014867ed5',
+        bookmarks: null
+      };
+    }
   }
 
   public onSubmit() {
-    this.tagService.update(this.tag).subscribe( (tag) => {
-      this.tag = tag;
-    });
+    if (this.tag.id) {
+      this.tagService.update(this.tag).subscribe( (tag) => {
+        this.tag = tag;
+      });
+    } else {
+      this.tagService.create(this.tag).subscribe( (tag) => {
+        this.tag = tag;
+      });
+    }
   }
 }

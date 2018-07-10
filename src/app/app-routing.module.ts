@@ -1,3 +1,5 @@
+import { TagcreateComponent } from './tag/tagcreate/tagcreate.component';
+import { TagdeleteComponent } from './tag/tagdelete/tagdelete.component';
 import { TaglistComponent } from './tag/taglist/taglist.component';
 import { DetailsComponent } from './tag/details/details.component';
 import { NgModule } from '@angular/core';
@@ -11,8 +13,10 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'bookmarks', component: BookmarklistComponent},
   {path: 'tags', component: TaglistComponent},
-  {path: 'tag/:id', component: DetailsComponent},
-  {path: 'tag/:id/edit', component: TagformComponent}
+  {path: 'tag/create', component: TagformComponent},
+  {path: 'tag/:id/edit', component: TagformComponent},
+  {path: 'tag/:id/delete', component: TagdeleteComponent},
+  {path: 'tag/:id', component: DetailsComponent}
 ];
 
 @NgModule({
